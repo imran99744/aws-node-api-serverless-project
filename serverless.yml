@@ -1,6 +1,6 @@
-org: trainwithshubham
-app: aws-node-http-api-project
-service: aws-node-http-api-project
+org: imran99744
+app: aws-node-api-serverless-project
+service: aws-node-api-serverless-project
 frameworkVersion: '3'
 
 provider:
@@ -15,25 +15,25 @@ provider:
         - arn:aws:dynamodb:us-east-1:626072240565:table/doTask
 
 functions:
-  hello:
+  main:
     handler: src/main.handler
     events:
       - httpApi:
           path: /
           method: get
-  kaamBharo:
+  insertTodo:
     handler: src/insertTodo.handler
     events:
       - httpApi:
           path: /todo
           method: post
-  kaamDikhao:
+  getTodo:
     handler: src/getTodo.handler
     events:
       - httpApi:
           path: /todo
           method: get
-  kaamKhatamKaro:
+  finishTodo:
     handler: src/finishTodo.handler
     events:
       - httpApi:
@@ -42,7 +42,7 @@ functions:
 
 resources:
   Resources:
-    KaamKaro:
+    doTask:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: doTask
