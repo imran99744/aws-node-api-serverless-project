@@ -1,0 +1,55 @@
+org: trainwithshubham
+app: aws-node-http-api-project
+service: aws-node-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - arn:aws:dynamodb:us-east-1:626072240565:table/doTask
+
+functions:
+  hello:
+    handler: src/main.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+  kaamBharo:
+    handler: src/insertTodo.handler
+    events:
+      - httpApi:
+          path: /todo
+          method: post
+  kaamDikhao:
+    handler: src/getTodo.handler
+    events:
+      - httpApi:
+          path: /todo
+          method: get
+  kaamKhatamKaro:
+    handler: src/finishTodo.handler
+    events:
+      - httpApi:
+          path: /todo/{id}
+          method: put
+
+resources:
+  Resources:
+    KaamKaro:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: doTask
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
