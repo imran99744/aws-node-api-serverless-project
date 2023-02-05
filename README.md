@@ -30,8 +30,8 @@ The API consists of AWS Lambda functions that are triggered by HTTP requests. Th
 ## Usage
 The API provides the following endpoints:
 
-- `GET /getTodo:` Retrieve a list of all items in the database
-- `POST /insertTodo:` Add a new item to the database
+- `GET /todo:` Retrieve a list of all items in the database
+- `POST /todo:` Add a new item to the database
 - `PUT /finishTodo/{id}:` Update an existing item in the database
 
 ## Conclusion
