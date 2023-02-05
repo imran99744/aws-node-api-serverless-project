@@ -1,7 +1,7 @@
 "use strict";
 const AWS = require("aws-sdk");
 
-const finishTodo = async (event) => {
+const updateTodo = async (event) => {
 
   const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
@@ -23,5 +23,5 @@ const finishTodo = async (event) => {
 };
 
 module.exports = {
-    handler: finishTodo,
+    handler: updateTodo,
 };
