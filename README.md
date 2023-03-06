@@ -35,4 +35,4 @@ The API provides the following endpoints:
 - `PUT /updateTodo/{id}:` Update an existing item in the database
 
 ## Conclusion
-This Node.js API provides a simple and scalable solution for performing CRUD operations on a database. By deploying the API on AWS Lambda and using the Serverless framework, you can take advantage of using serverless architecture include reduced operational costs, increased scalability, improved resiliency, and increased focus on application development.
+This Node.js API provides a simple and scalable solution for performing CRUD operations on a database. By deploying the API on AWS Lambda and using the Serverless framework, you can take advantage of using serverless architecture include reduced operational costs, increased scalability, improved resiliency, and increased focus on application development
