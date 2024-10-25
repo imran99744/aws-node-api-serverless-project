@@ -17,7 +17,7 @@ The API consists of AWS Lambda functions that are triggered by HTTP requests. Th
 `
 
 3. Clone the repository to your local machine
-4. Nigate to the project directory and run the following command to install the project dependencies:
+4. Navigate to the project directory and run the following command to install the project dependencies:
 `npm install
 `
 
